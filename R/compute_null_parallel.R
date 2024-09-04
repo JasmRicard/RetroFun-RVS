@@ -78,7 +78,7 @@ compute.null.parallel = function(pedigree, distinguishHomo = FALSE, cryptic.rela
           
           fun_to_apply <- function(vec) {
             number.of.carriers = length(vec)
-            RVS::RVsharing(pedigree[[fam]], carriers=vec,useAffected = TRUE)
+            RVsharing(pedigree[[fam]], carriers=vec,useAffected = TRUE)
           }
           
           #probs = sapply(carrier.sets, fun_to_apply)
@@ -91,7 +91,7 @@ compute.null.parallel = function(pedigree, distinguishHomo = FALSE, cryptic.rela
           if(!is.null(kinshipCoeff)){
             fun_to_apply <- function(vec) {
               number.of.carriers = length(vec)
-              RVS::RVsharing(pedigree[[fam]], carriers=vec,useAffected = TRUE, kinshipCoeff=kinshipCoeff, kinshipOrder=nf%/%2+1, distinguishHomo = TRUE)
+              RVsharing(pedigree[[fam]], carriers=vec,useAffected = TRUE, kinshipCoeff=kinshipCoeff, kinshipOrder=nf%/%2+1, distinguishHomo = TRUE)
             }
             
             #probs = sapply(carrier.sets, fun_to_apply)
@@ -115,7 +115,7 @@ compute.null.parallel = function(pedigree, distinguishHomo = FALSE, cryptic.rela
           fun_to_apply <- function(vec) {
             number.of.carriers = length(vec)
             
-            prob.distinguish.homo = RVS::RVsharing(pedigree[[fam]], carriers=vec, distinguishHomo = TRUE,useAffected = TRUE)
+            prob.distinguish.homo = RVsharing(pedigree[[fam]], carriers=vec, distinguishHomo = TRUE,useAffected = TRUE)
             names.config = names(prob.distinguish.homo)
             
             config.homo = sapply(names.config,
@@ -135,7 +135,7 @@ compute.null.parallel = function(pedigree, distinguishHomo = FALSE, cryptic.rela
             fun_to_apply <- function(vec) {
               number.of.carriers = length(vec)
               
-              prob.distinguish.homo = RVS::RVsharing(myPedTrimmed[[fam]], carriers=vec, distinguishHomo = TRUE,useAffected = TRUE, kinshipCoeff = kinshipCoeff, kinshipOrder = nf%/%2+1)
+              prob.distinguish.homo = RVsharing(myPedTrimmed[[fam]], carriers=vec, distinguishHomo = TRUE,useAffected = TRUE, kinshipCoeff = kinshipCoeff, kinshipOrder = nf%/%2+1)
               names.config = names(prob.distinguish.homo)
               
               config.homo = sapply(names.config, function(n) {sum(sapply(1:nchar(n), function(x){
@@ -182,7 +182,7 @@ compute.null.parallel = function(pedigree, distinguishHomo = FALSE, cryptic.rela
         if(cryptic.relatedness == FALSE){
           fun_to_apply <- function(vec) {
             number.of.carriers = length(vec)
-            RVS::RVsharing(pedigree[fam], carriers=vec,useAffected = TRUE)
+            RVsharing(pedigree[fam], carriers=vec,useAffected = TRUE)
           }
           
           #probs = sapply(carrier.sets, fun_to_apply)
@@ -196,7 +196,7 @@ compute.null.parallel = function(pedigree, distinguishHomo = FALSE, cryptic.rela
           if(!is.null(kinshipCoeff)){
             fun_to_apply <- function(vec) {
               number.of.carriers = length(vec)
-              RVS::RVsharing(pedigree[fam], carriers=vec,useAffected = TRUE, kinshipCoeff=kinshipCoeff, kinshipOrder=nf%/%2+1, distinguishHomo = TRUE)
+              RVsharing(pedigree[fam], carriers=vec,useAffected = TRUE, kinshipCoeff=kinshipCoeff, kinshipOrder=nf%/%2+1, distinguishHomo = TRUE)
             }
             
             #probs = sapply(carrier.sets, fun_to_apply)
@@ -219,7 +219,7 @@ compute.null.parallel = function(pedigree, distinguishHomo = FALSE, cryptic.rela
           fun_to_apply <- function(vec) {
             number.of.carriers = length(vec)
             
-            prob.distinguish.homo = RVS::RVsharing(pedigree[fam], carriers=vec, distinguishHomo = TRUE,useAffected = TRUE)
+            prob.distinguish.homo = RVsharing(pedigree[fam], carriers=vec, distinguishHomo = TRUE,useAffected = TRUE)
             names.config = names(prob.distinguish.homo)
             
             config.homo = sapply(names.config, function(n) {sum(sapply(1:nchar(n), function(x){
@@ -240,7 +240,7 @@ compute.null.parallel = function(pedigree, distinguishHomo = FALSE, cryptic.rela
             fun_to_apply <- function(vec) {
               number.of.carriers = length(vec)
               
-              prob.distinguish.homo = RVS::RVsharing(pedigree[fam], carriers=vec, distinguishHomo = TRUE,useAffected = TRUE, kinshipCoeff = kinshipCoeff, kinshipOrder = nf%/%2+1)
+              prob.distinguish.homo = RVsharing(pedigree[fam], carriers=vec, distinguishHomo = TRUE,useAffected = TRUE, kinshipCoeff = kinshipCoeff, kinshipOrder = nf%/%2+1)
               names.config = names(prob.distinguish.homo)
               
               config.homo = sapply(names.config, function(n) {sum(sapply(1:nchar(n), function(x){
@@ -287,7 +287,7 @@ compute.null.parallel = function(pedigree, distinguishHomo = FALSE, cryptic.rela
       if(cryptic.relatedness == FALSE){
         fun_to_apply <- function(vec) {
           number.of.carriers = length(vec)
-          RVS::RVsharing(pedigree, carriers=vec,useAffected = TRUE)
+          RVsharing(pedigree, carriers=vec,useAffected = TRUE)
         }
         
         #probs = sapply(carrier.sets, fun_to_apply)
@@ -300,7 +300,7 @@ compute.null.parallel = function(pedigree, distinguishHomo = FALSE, cryptic.rela
         if(!is.null(kinshipCoeff)){
           fun_to_apply <- function(vec) {
             number.of.carriers = length(vec)
-            RVS::RVsharing(pedigree, carriers=vec,useAffected = TRUE, kinshipCoeff=kinshipCoeff, kinshipOrder=nf%/%2+1, distinguishHomo = TRUE)
+            RVsharing(pedigree, carriers=vec,useAffected = TRUE, kinshipCoeff=kinshipCoeff, kinshipOrder=nf%/%2+1, distinguishHomo = TRUE)
           }
           
           #probs = sapply(carrier.sets, fun_to_apply)
@@ -324,7 +324,7 @@ compute.null.parallel = function(pedigree, distinguishHomo = FALSE, cryptic.rela
         fun_to_apply <- function(vec) {
           number.of.carriers = length(vec)
           
-          prob.distinguish.homo = RVS::RVsharing(pedigree[fam], carriers=vec, distinguishHomo = TRUE, useAffected = TRUE)
+          prob.distinguish.homo = RVsharing(pedigree[fam], carriers=vec, distinguishHomo = TRUE, useAffected = TRUE)
           names.config = names(prob.distinguish.homo)
           
           config.homo = sapply(names.config, function(n) {sum(sapply(1:nchar(n), function(x){
@@ -344,7 +344,7 @@ compute.null.parallel = function(pedigree, distinguishHomo = FALSE, cryptic.rela
           fun_to_apply <- function(vec) {
             number.of.carriers = length(vec)
             
-            prob.distinguish.homo = RVS::RVsharing(pedigree, carriers=vec, distinguishHomo = TRUE,useAffected = TRUE, kinshipCoeff = kinshipCoeff, kinshipOrder = nf%/%2+1)
+            prob.distinguish.homo = RVsharing(pedigree, carriers=vec, distinguishHomo = TRUE,useAffected = TRUE, kinshipCoeff = kinshipCoeff, kinshipOrder = nf%/%2+1)
             names.config = names(prob.distinguish.homo)
             
             config.homo = sapply(names.config, function(n) {sum(sapply(1:nchar(n), function(x){
