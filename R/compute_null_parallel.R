@@ -324,7 +324,7 @@ compute.null.parallel = function(pedigree, distinguishHomo = FALSE, cryptic.rela
         fun_to_apply <- function(vec) {
           number.of.carriers = length(vec)
           
-          prob.distinguish.homo = RVsharing(pedigree[fam], carriers=vec, distinguishHomo = TRUE, useAffected = TRUE)
+          prob.distinguish.homo = RVsharing(pedigree, carriers=vec, distinguishHomo = TRUE, useAffected = TRUE)
           names.config = names(prob.distinguish.homo)
           
           config.homo = sapply(names.config, function(n) {sum(sapply(1:nchar(n), function(x){
