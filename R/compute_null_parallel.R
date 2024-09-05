@@ -379,7 +379,7 @@ compute.null.parallel = function(pedigree, distinguishHomo = FALSE, cryptic.rela
   
   
   expected = compute.expected.by.fam(l, distinguishHomo=distinguishHomo, cryptic.relatedness=cryptic.relatedness)
-  var.covar = compute.var.by.fam(l, distinguishHomo=distinguishHomo, cryptic.relatedness=cryptic.relatedness)
+  var.covar = compute.var.by.fam.parallel(l, distinguishHomo=distinguishHomo, cryptic.relatedness=cryptic.relatedness)
   
   df.expected.var.covar = merge(expected, var.covar, by="FamID")
   attributes(df.expected.var.covar)$distinguishHomo = distinguishHomo
