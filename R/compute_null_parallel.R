@@ -9,10 +9,11 @@
 #' @param cryptic.relatedness a boolean: TRUE when cryptic relatedness is expected, FALSE otherwise
 #' @param kinshipCoeff mean kinship coefficient among the pedigree founders
 #' @param fam.ids a vector of family ids where inbreeding or cryptic relatedness may be computed
+#' @param out.prob.dist a boolean: TRUE when the probability distributions need to be a part of the output
 #' @return The expected genotype value, variance and covariance for each pedigree within a data.frame
 #' @export
 
-compute.null.parallel = function(pedigree, distinguishHomo = FALSE, cryptic.relatedness=FALSE, kinshipCoeff=NULL, fam.ids=NULL){
+compute.null.parallel = function(pedigree, distinguishHomo = FALSE, cryptic.relatedness=FALSE, kinshipCoeff=NULL, fam.ids=NULL, out.prob.dist = FALSE){
 
   if(!distinguishHomo%in%c(TRUE,FALSE) | !cryptic.relatedness%in%c(TRUE,FALSE) ){
     stop("distinguishHomo or cryptic.relatedness parameters were not well set, please check ...")
@@ -384,5 +385,10 @@ compute.null.parallel = function(pedigree, distinguishHomo = FALSE, cryptic.rela
   df.expected.var.covar = merge(expected, var.covar, by="FamID")
   attributes(df.expected.var.covar)$distinguishHomo = distinguishHomo
   
-  return(df.expected.var.covar)
+  if (out.prob.dist){
+    output <- list("distributions" = l, "expected.values" = df.expected.var.covar)
+  } else {
+    output <- df.expected.var.covar 
+  }
+  return(output)
 }
